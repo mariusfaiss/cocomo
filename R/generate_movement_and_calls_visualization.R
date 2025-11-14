@@ -211,9 +211,11 @@ generate_movement_and_calls_visualization <-function(xs = NULL, ys = NULL,
 
   #create images
   img_idx <- 1
+  total_idx <- length(time_steps)
   for(t in time_steps){
 
-    print(t)
+    cat(sprintf("\r%d/%d", img_idx, total_idx))
+    flush.console()
 
     #get xs and ys for current positions, x_t and y_t vectors
     x_t <- xs[,t]
